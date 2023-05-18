@@ -22,6 +22,7 @@ import {
   Path,
   REPO_URL,
 } from "../constant";
+{/*  Buy_URL,  */}
 
 import { Link, useNavigate } from "react-router-dom";
 import { useMobileScreen } from "../utils";
@@ -96,9 +97,12 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>AI研究院</div>
-        <div className={styles["sidebar-sub-title"]}>
-          欢迎来到ChatGPT4.0.
+        <div className={styles["sidebar-title"]}>AI研究所-企业级</div>
+        <div className={styles["sidebar-sub-title"]} style={{ margin: '10px 0' }}>
+          <a style={{ textDecoration: 'none' }} href='https://s.pdb2.com/pages/20230506/dmq3GL4Hh9PORGF.html'>欢迎使用ChatGPT,点击我加入AI交流群.</a>
+        </div>
+        <div className={styles["sidebar-sub-title"]} style={{ margin: '10px 0' }}>
+          <a style={{ textDecoration: 'none' }} href='https://mp.weixin.qq.com/s/V07P7Ms0ZuwioWJ9R2KlIQ'>点击我查看使用技巧.</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -106,6 +110,8 @@ export function SideBar(props: { className?: string }) {
       </div>
 
       <div className={styles["sidebar-header-bar"]}>
+        {/* 面具 */}
+        {/* <a style={{ textDecoration: 'none' }}   target="_blank"> */}
         <IconButton
           icon={<MaskIcon />}
           text={shouldNarrow ? undefined : Locale.Mask.Name}
@@ -113,13 +119,20 @@ export function SideBar(props: { className?: string }) {
           onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}
           shadow
         />
+        {/* </a> */}
+        {/* 买课中心课程教学 */}
+        {/* <Link to={Buy_URL}> */}
+        {/* <a style={{ textDecoration: 'none' }} href={Buy_URL}  target="_blank">*/}
         <IconButton
           icon={<PluginIcon />}
-          text={shouldNarrow ? undefined : Locale.Plugin.Name}
+          text="课程教学" 
           className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
-          shadow
-        />
+          onClick={() => window.location.href='https://appulfjljvg3856.h5.xiaoeknow.com/p/decorate/homepage?share_user_id=anonymous_A9mkXFpUh8RhxLq8T&wework_share_customer_id=anonymous_A9mkXFpUh8RhxLq8T&entry=2&entry_type=200'
+}
+          shadow 
+         />
+        {/* </a> */}
+        {/* </Link> */}
       </div>
 
       <div
@@ -132,7 +145,7 @@ export function SideBar(props: { className?: string }) {
       >
         <ChatList narrow={shouldNarrow} />
       </div>
-
+      
       <div className={styles["sidebar-tail"]}>
         <div className={styles["sidebar-actions"]}>
           <div className={styles["sidebar-action"] + " " + styles.mobile}>
@@ -145,18 +158,21 @@ export function SideBar(props: { className?: string }) {
               }}
             />
           </div>
+          {/* 设置 */}
           <div className={styles["sidebar-action"]}>
-            <Link to={Path.Settings}>
-              <IconButton icon={<SettingsIcon />} shadow />
+            <Link style={{ textDecoration: 'none' }} to={Path.Settings}>
+              <IconButton icon={<SettingsIcon />} text="设置" shadow />
             </Link>
           </div>
+          {/* 视频号 */}
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL}  target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
+            <a style={{ textDecoration: 'none' }} href={REPO_URL}  target="_blank">
+              <IconButton icon={<GithubIcon />} text="视频号" shadow />
             </a>
           </div>
         </div>
         <div>
+        {/* 新建信息 */}
           <IconButton
             icon={<AddIcon />}
             text={shouldNarrow ? undefined : Locale.Home.NewChat}
